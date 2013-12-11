@@ -80,7 +80,7 @@ if ($CurrentExecutionPolicy -gt [Microsoft.PowerShell.ExecutionPolicy]::RemoteSi
   Set-ExecutionPolicy -Scope CurrentUser RemoteSigned; ^
 } ^
 Import-Module """%~dp0Psake\%PSAKE_VERSION%\psake.psm1"""; ^
-Invoke-psake -buildFile """%~dp0build.ps1""" %* | more; ^
+Invoke-psake -buildFile """%~dp0build.ps1""" %*; ^
 $ReturnCode = 1; ^
 if ($Psake.Build_Success -eq $True) ^
 { ^
